@@ -1,0 +1,97 @@
+:root {
+  --background-color: #505050;
+  --display-background: #2c2c2c;
+  --button-background: #363636;
+  --button-hover: #bdbdbd;
+  --button-active: #9e9e9e;
+  --button-font-color: #ffffff;
+  --equal-background: #8bc34a;
+  --reset-background: #f44336;
+  --font-size: 2rem;
+  --button-size: 80px;
+  --border-radius: 20px;
+  --button-radius: 12px;
+  --gap: 12px;
+  --shadow: rgba(0, 0, 0, 0.1) 0px 8px 16px;
+}
+
+.calculator {
+  background: var(--background-color);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  width: 320px;
+  box-shadow: var(--shadow);
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.display {
+  background: var(--display-background);
+  color: var(--button-font-color);
+  font-size: var(--font-size);
+  padding: 20px;
+  margin-bottom: var(--gap);
+  border-radius: var(--button-radius);
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--button-size);
+  background: var(--button-background);
+  color: var(--button-font-color);
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: var(--button-hover);
+}
+
+.button:active {
+  background: var(--button-active);
+}
+
+.equal {
+  grid-column: span 3;
+  background: var(--equal-background);
+  color: #fff;
+  font-weight: bold;
+}
+
+.reset {
+  background: var(--reset-background);
+  grid-column: span 3;
+  color: #fff;
+  font-weight: bold;
+}
+
+.equal:hover,
+.reset:hover {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.equal:active,
+.reset:active {
+  background: darken(var(--reset-background), 10%);
+  transition: ease-in-out 0.5s;
+}
+
+.button-grid > :nth-child(10) {
+  grid-column: span 3;
+}
